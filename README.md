@@ -35,12 +35,24 @@ Describe and show how to run the tests with code examples.
 
 ## Contributors
 
-To be announced
+Alex Bang
 
 ## Mockups
 
 - [Landing Page](https://wireframe.cc/Txg71W)
 - [Fixtures Page](https://wireframe.cc/mxcanv)
+
+## ToDo
+
+- SignUp should send user to Application Page (make SignUp more understandable)
+    - Instead of favorite team, let user choose favorite league
+- Complete Fixture Page (/fixtures)
+    - Provide a drop-down menu for a league
+    - Upon selecting a team, we should see lists of fixtures
+    - Add to calendar button
+    
+_Adding crests_
+_Whole Backend_
 
 ## License
 

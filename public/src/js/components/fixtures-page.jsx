@@ -8,7 +8,7 @@ class FixturesPage extends React.Component {
     }
 
     render() {
-        console.log(this.props.fixtures, '<_____ WHY RENDER TWICE MAN YOU DRIVING ME CRAZY');
+        console.log(this.props.fixtures, '<------ FIXTURES ARRAY');
         let date = this.props.fixtures ? this.props.fixtures[0].date : '';
         return (
             <div>
