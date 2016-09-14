@@ -17,14 +17,14 @@ function LandingPage() {
                     <form id="signin" className="navbar-form navbar-right" role="form">
                         <div className="input-group"><span className="input-group-addon"><i
                             className="glyphicon glyphicon-user"/></span>
-                            <input id="email" type="email" className="form-control" name="email" value=""
+                            <input id="email" type="email" className="form-control" name="email"
                                    placeholder="Email Address"/>
                         </div>
                         &nbsp;
 
                         <div className="input-group"><span className="input-group-addon"><i
                             className="glyphicon glyphicon-lock"/></span>
-                            <input id="password" type="password" className="form-control" name="password" value=""
+                            <input id="password" type="password" className="form-control" name="password"
                                    placeholder="Password"/>
                         </div>
                         &nbsp;
