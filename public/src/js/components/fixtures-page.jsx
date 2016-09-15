@@ -15,17 +15,17 @@ class FixturesPage extends React.Component {
             if (team.homeTeamName === 'Manchester United FC' || team.awayTeamName === 'Manchester United FC') {
                 return <div key={index}>
                   <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                       <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
                     </div>
                     {/* <span> --------> </span> */}
                       <div className="col-md-4">
                       <span>{team.date}</span>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-2">
                       <span>
                       {/* team.date = date:"2016-08-13T11:30:00Z" */}
-                        <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button">Add to calendar</button></a>
+                        <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button"><span class="glyphicon glyphicon-calendar"  aria-hidden="true"></span>Add to calendar</button></a>
                       </span>
                     </div>
                   </div>
@@ -44,7 +44,8 @@ class FixturesPage extends React.Component {
                         </div>
 
                         {/* Dropdowns */}
-                        {/* <div className="dropdown" id="dropdown">
+                          {/*The <li> items are add padding-bottom to the dropdown box */}
+                         {/* <div className="dropdown" id="dropdown">
                           <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Teams
                             <span className="caret"></span>
