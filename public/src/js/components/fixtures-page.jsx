@@ -9,7 +9,15 @@ class FixturesPage extends React.Component {
 
     render() {
         console.log(this.props.fixtures, '<------ FIXTURES ARRAY');
-        let date = this.props.fixtures ? this.props.fixtures[0].date : '';
+        let date = this.props.fixtures ? this.props.fixtures.map(function(team, index){
+            if (team.homeTeamName === 'Manchester United FC' || team.awayTeamName === 'Manchester United FC') {
+                return <div key={index}>
+                    <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
+                    <span> --------> </span>
+                    <span>{team.date}</span>
+                </div>;
+            }
+        }) : '';
         return (
             <div>
                 {/* NavBar */}
