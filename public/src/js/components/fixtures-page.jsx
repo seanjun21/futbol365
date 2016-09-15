@@ -10,6 +10,8 @@ class FixturesPage extends React.Component {
     render() {
         console.log(this.props.fixtures, '<------ FIXTURES ARRAY');
         let date = this.props.fixtures ? this.props.fixtures.map(function(team, index){
+          var dtg = team.date;
+          var when = dtg.replace(/-|:/g, "");
             if (team.homeTeamName === 'Manchester United FC' || team.awayTeamName === 'Manchester United FC') {
                 return <div key={index}>
                     <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
@@ -17,7 +19,7 @@ class FixturesPage extends React.Component {
                     <span>{team.date}</span>
                     <span>
                     {/* team.date = date:"2016-08-13T11:30:00Z" */}
-                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates=20140127T224000Z/20140320T221500Z"}>Add to my Google calendar</a>
+                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}>Add to my Google calendar</a>
 
                     </span>
                 </div>;
