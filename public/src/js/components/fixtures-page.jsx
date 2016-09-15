@@ -19,7 +19,7 @@ class FixturesPage extends React.Component {
                     <span>{team.date}</span>
                     <span>
                     {/* team.date = date:"2016-08-13T11:30:00Z" */}
-                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button">Add to my Google calendar</button></a>
+                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button">Add to calendar</button></a>
 
                     </span>
                 </div>;
