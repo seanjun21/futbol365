@@ -14,14 +14,21 @@ class FixturesPage extends React.Component {
           var when = dtg.replace(/-|:/g, "");
             if (team.homeTeamName === 'Manchester United FC' || team.awayTeamName === 'Manchester United FC') {
                 return <div key={index}>
-                    <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
-                    <span> --------> </span>
-                    <span>{team.date}</span>
-                    <span>
-                    {/* team.date = date:"2016-08-13T11:30:00Z" */}
-                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button">Add to calendar</button></a>
-
-                    </span>
+                  <div className="row">
+                    <div className="col-md-4">
+                      <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
+                    </div>
+                    {/* <span> --------> </span> */}
+                      <div className="col-md-4">
+                      <span>{team.date}</span>
+                    </div>
+                    <div className="col-md-4">
+                      <span>
+                      {/* team.date = date:"2016-08-13T11:30:00Z" */}
+                        <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button">Add to calendar</button></a>
+                      </span>
+                    </div>
+                  </div>
                 </div>;
             }
         }) : '';
@@ -35,6 +42,20 @@ class FixturesPage extends React.Component {
                         <div className="navbar-header">
                             <div className="navbar-brand">Futbol365</div>
                         </div>
+
+                        {/* Dropdowns */}
+                        {/* <div className="dropdown" id="dropdown">
+                          <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Teams
+                            <span className="caret"></span>
+                          </button>
+                          <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li className="dropdown-header">Select a team to view schedule</li>
+                            <li><a href="#">Manchester City FC</a></li>
+                            <li><a href="#">Chelsea FC</a></li>
+                            <li><a href="#">Leicester City FC</a></li>
+                          </ul>
+                        </div> */}
 
                         {/* Log Out */}
                         <form id="signin" className="navbar-form navbar-right" role="form">
