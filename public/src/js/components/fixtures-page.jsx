@@ -15,6 +15,11 @@ class FixturesPage extends React.Component {
                     <span>{team.homeTeamName} vs. {team.awayTeamName}</span>
                     <span> --------> </span>
                     <span>{team.date}</span>
+                    <span>
+                    {/* team.date = date:"2016-08-13T11:30:00Z" */}
+                      <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates=20140127T224000Z/20140320T221500Z"}>Add to my Google calendar</a>
+
+                    </span>
                 </div>;
             }
         }) : '';
