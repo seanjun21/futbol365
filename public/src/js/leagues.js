@@ -19,7 +19,7 @@ var leagues = {
 
 // Parse this: Premier League 2017/17 teams by order in standing
 
-var teams = {
+var array = {
   "_links": {
     "self": {
       "href": "http://api.football-data.org/v1/competitions/426/leagueTable/?matchday=5"
@@ -673,10 +673,23 @@ var teams = {
     }
   ]
 }
-
+// var hashTeam = {
+//  Manchester United: 66
+//  Stoke City: 70
+//  ...
+//  ...
+// };
+//
+//
+// action.fetchFixtures(66)
+//
 // prints all teams:
-// for (i=0; i< teams["standing"].length; i++) {
-// 	console.log(teams["standing"][i]["teamName"])
+// for (i=0; i< array["standing"].length; i++) {
+//
+//  var teamID = array["standing"][i]["team"]["href"] --> URL, then parse it so that you only get the last ID number
+//
+//
+// 	hashTeam[array["standing"][i]["teamName"]] = teamID
 // }
 //
 // Manchester City FC

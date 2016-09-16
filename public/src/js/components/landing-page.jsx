@@ -15,17 +15,15 @@ function LandingPage() {
 
                     {/* Login */}
                     <form id="signin" className="navbar-form navbar-right" role="form">
-                        <div className="input-group"><span className="input-group-addon"><i
-                            className="glyphicon glyphicon-user"/></span>
-                            <input id="email" type="email" className="form-control" name="email"
-                                   placeholder="Email Address"/>
+                        <div className="input-group">
+                            <span className="input-group-addon"><i className="glyphicon glyphicon-user"/></span>
+                            <input id="email" type="email" className="form-control" name="email" placeholder="Email Address"/>
                         </div>
                         &nbsp;
 
-                        <div className="input-group"><span className="input-group-addon"><i
-                            className="glyphicon glyphicon-lock"/></span>
-                            <input id="password" type="password" className="form-control" name="password"
-                                   placeholder="Password"/>
+                        <div className="input-group">
+                            <span className="input-group-addon"><i className="glyphicon glyphicon-lock"/></span>
+                            <input id="password" type="password" className="form-control" name="password" placeholder="Password"/>
                         </div>
                         &nbsp;
                         <button type="submit" className="btn btn-primary">Login</button>
@@ -46,27 +44,21 @@ function LandingPage() {
                         <fieldset>
 
                             {/* Email */}
-                            <div className="form-group"><label className="col-md-4 control-label"
-                                                               htmlFor="email">Email</label>
-                                <div className="col-md-4"><input id="email" name="email" type="text"
-                                                                 placeholder="Enter your email id"
-                                                                 className="form-control input-md" required=""/></div>
+                            <div className="form-group">
+                                <label className="col-md-4 control-label" htmlFor="email">Email</label>
+                                <div className="col-md-4"><input id="email" name="email" type="text" placeholder="Enter your email id" className="form-control input-md" required=""/></div>
                             </div>
 
                             {/* Password */}
-                            <div className="form-group"><label className="col-md-4 control-label"
-                                                               htmlFor="password">Password</label>
-                                <div className="col-md-4"><input id="password" name="password" type="password"
-                                                                 placeholder="Enter a password"
-                                                                 className="form-control input-md" required=""/></div>
+                            <div className="form-group">
+                                <label className="col-md-4 control-label" htmlFor="password">Password</label>
+                                <div className="col-md-4"><input id="password" name="password" type="password" placeholder="Enter a password" className="form-control input-md" required=""/></div>
                             </div>
 
                             {/* Favorite Team */}
-                            <div className="form-group"><label className="col-md-4 control-label" htmlFor="contact">Favorite
-                                Team</label>
-                                <div className="col-md-4"><input id="contact" name="contact" type="text"
-                                                                 placeholder="Enter your favorite team"
-                                                                 className="form-control input-md" required=""/></div>
+                            <div className="form-group">
+                                <label className="col-md-4 control-label" htmlFor="contact">Favorite Team</label>
+                                <div className="col-md-4"><input id="contact" name="contact" type="text" placeholder="Enter your favorite team" className="form-control input-md" required=""/></div>
                             </div>
 
                             {/* SignUp Button */}
@@ -82,6 +74,5 @@ function LandingPage() {
         </div>
     );
 }
-
 
 export default LandingPage;

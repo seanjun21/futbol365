@@ -4,10 +4,12 @@ import actions from '../redux/actions';
 
 class FixturesPage extends React.Component {
     componentWillMount() {
+        this.props.dispatch(actions.fetchTeams());
         this.props.dispatch(actions.fetchFixtures());
     }
 
     render() {
+        console.log(this.props, '<----- this.props')
         console.log(this.props.fixtures, '<------ FIXTURES ARRAY');
         let date = this.props.fixtures ? this.props.fixtures.map(function(team, index){
           var dtg = team.date;
@@ -25,7 +27,7 @@ class FixturesPage extends React.Component {
                     <div className="col-md-2">
                       <span>
                       {/* team.date = date:"2016-08-13T11:30:00Z" */}
-                        <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button"><span class="glyphicon glyphicon-calendar"  aria-hidden="true"></span>Add to calendar</button></a>
+                        <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button"><span className="glyphicon glyphicon-calendar"  aria-hidden="true"></span> Add to calendar</button></a>
                       </span>
                     </div>
                   </div>
@@ -81,7 +83,8 @@ class FixturesPage extends React.Component {
 
 const mapStateToProps = function (state, props) {
     return {
-        fixtures: state.fixtures
+        fixtures: state.fixtures,
+        teams: state.teams
     }
 };
 
