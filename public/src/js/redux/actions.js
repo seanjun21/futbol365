@@ -38,10 +38,9 @@ function fetchFixtures() {
     };
 }
 
+
 /*----- Fetch inidvidual teams -----*/
-
 const FETCH_TEAMS_SUCCESS = 'FETCH_TEAMS_SUCCESS';
-
 function fetchTeamsSuccess(teams) {
     return {
         type: FETCH_TEAMS_SUCCESS,
@@ -50,7 +49,6 @@ function fetchTeamsSuccess(teams) {
 }
 
 const FETCH_TEAMS_ERROR = 'FETCH_TEAMS_ERROR';
-
 function fetchTeamsError(error) {
     return {
         type: FETCH_TEAMS_ERROR,
@@ -60,7 +58,7 @@ function fetchTeamsError(error) {
 
 function fetchTeams() {
     return (dispatch) => {
-        const url = 'http://api.football-data.org//v1/competitions/426/leagueTable';
+        const url = 'http://api.football-data.org/v1/competitions/426/leagueTable';
         return fetch(url, {
             headers: { 'X-Auth-Token': 'e34ad8f9aebb436eb3437851ca9b581a' }
         }).then((response) => {

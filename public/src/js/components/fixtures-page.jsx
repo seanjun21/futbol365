@@ -9,9 +9,10 @@ class FixturesPage extends React.Component {
     }
 
     render() {
-        console.log(this.props, '<----- this.props')
+        console.log(this.props.teams, '<----- this.props.teams')  // Returned object does not include children
         console.log(this.props.fixtures, '<------ FIXTURES ARRAY');
         let date = this.props.fixtures ? this.props.fixtures.map(function(team, index){
+          // Retrieve date object and parse to Google calendar format
           var dtg = team.date;
           var when = dtg.replace(/-|:/g, "");
             if (team.homeTeamName === 'Manchester United FC' || team.awayTeamName === 'Manchester United FC') {
@@ -26,7 +27,7 @@ class FixturesPage extends React.Component {
                     </div>
                     <div className="col-md-2">
                       <span>
-                      {/* team.date = date:"2016-08-13T11:30:00Z" */}
+                      {/* Add to Google calendar and prepopulate teams and time */}
                         <a href={"https://www.google.com/calendar/render?action=TEMPLATE&text="+team.homeTeamName+" vs. "+team.awayTeamName+"&dates="+when+"/"+when}><button type="button" id="cal-button"><span className="glyphicon glyphicon-calendar"  aria-hidden="true"></span> Add to calendar</button></a>
                       </span>
                     </div>
@@ -83,8 +84,9 @@ class FixturesPage extends React.Component {
 
 const mapStateToProps = function (state, props) {
     return {
-        fixtures: state.fixtures,
-        teams: state.teams
+      teams: state.teams,
+      fixtures: state.fixtures
+
     }
 };
 
