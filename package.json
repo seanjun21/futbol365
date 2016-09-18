@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/seanjun21/futbol-365#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongoose": "^4.6.0"
+    "mongoose": "^4.6.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0"
   }
 }

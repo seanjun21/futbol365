@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Route, hashHistory} from 'react-router';
-import LandingPage from './components/landing-page';
-import FixturesPage from './components/fixtures-page';
+import LandingPage from './components/landing/landing-page';
+import FixturesPage from './components/fixtures/fixtures-page';
 
 const routes = (
     <Router history={hashHistory}>
