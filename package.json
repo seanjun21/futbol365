@@ -1,7 +1,7 @@
 {
   "name": "futbol365",
   "version": "1.0.0",
-  "description": "## Synopsis",
+  "description": "Calendar App for Soccer Fans",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

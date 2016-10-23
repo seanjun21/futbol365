@@ -53,17 +53,21 @@ class LandingPage extends React.Component {
                             {/* User ID */}
                             <div className="form-group">
                                 <label className="col-md-4 control-label" htmlFor="user">User ID</label>
-                                <div className="col-md-4"><input id="user" name="user" type="text"
-                                                                 placeholder="Enter Your User ID"
-                                                                 className="form-control input-md" required=""/></div>
+                                <div className="col-md-4">
+                                    <input id="user" name="user" type="text"
+                                           placeholder="Enter Your User ID"
+                                           className="form-control input-md" required=""/>
+                                </div>
                             </div>
 
                             {/* Password */}
                             <div className="form-group">
                                 <label className="col-md-4 control-label" htmlFor="password">Password</label>
-                                <div className="col-md-4"><input id="password" name="password" type="password"
-                                                                 placeholder="Enter a Password"
-                                                                 className="form-control input-md" required=""/></div>
+                                <div className="col-md-4">
+                                    <input id="password" name="password" type="password"
+                                           placeholder="Enter a Password"
+                                           className="form-control input-md" required=""/>
+                                </div>
                             </div>
 
                             {/* Favorite League */}
@@ -88,9 +92,10 @@ class LandingPage extends React.Component {
 
 
                             {/* SignUp Button */}
-                            <div className="form-group"><label className="col-md-4 control-label" htmlFor="signup"/>
+                            <div className="form-group">
+                                <label className="col-md-4 control-label" htmlFor="signup"/>
                                 <div className="col-md-4">
-                                    <button id="signup" name="signup" className="btn btn-success">Sign Up</button>
+                                    <input id="signup" name="signup" className="btn btn-success" type="submit" value="Sign Up"/>
                                 </div>
                             </div>
                         </fieldset>
