@@ -8,7 +8,7 @@ const app = express();
 const jsonParser = bodyParser.json();
 
 app.use(jsonParser);
-app.use(express.static('./public/build'));
+app.use(express.static('./build'));
 app.use('/users', users);
 
 function runServer(callback) {

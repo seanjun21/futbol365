@@ -5,7 +5,9 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     User.create({
-        name: req.body.name
+        username: req.body.username,
+        password: req.body.password,
+        league: req.body.league
     }, function(err, item) {
         if (err) {
             return res.status(500).json({
