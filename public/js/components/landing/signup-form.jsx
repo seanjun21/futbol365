@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import actions from '../../redux/actions';
 
 class SignupForm extends React.Component {
     constructor() {
@@ -7,8 +9,12 @@ class SignupForm extends React.Component {
     }
 
     onSubmit(e) {
-        e.preventDefault;
-        console.log(this.state);
+        e.preventDefault();
+        this.props.dispatch(actions.addUser({
+            username: this.refs.username.value,
+            password: this.refs.password.value,
+            league: this.refs.league.value
+        }));
     }
 
 
@@ -20,7 +26,7 @@ class SignupForm extends React.Component {
                 <div className="form-group">
                     <label className="col-md-4 control-label">User ID</label>
                     <div className="col-md-4">
-                        <input id="username" name="username" type="text"
+                        <input id="username" ref="username" name="username" type="text"
                                placeholder="Enter Your User ID"
                                className="form-control input-md"/>
                     </div>
@@ -30,7 +36,7 @@ class SignupForm extends React.Component {
                 <div className="form-group">
                     <label className="col-md-4 control-label">Password</label>
                     <div className="col-md-4">
-                        <input id="password" name="password" type="password"
+                        <input id="password" ref="password" name="password" type="password"
                                placeholder="Enter a Password"
                                className="form-control input-md"/>
                     </div>
@@ -38,7 +44,7 @@ class SignupForm extends React.Component {
 
                 {/* Favorite League */}
                 <div className="form-group">
-                    <select className="selectpicker" title="Choose Your Favorite League" type="league">
+                    <select className="selectpicker" ref="league" title="Choose Your Favorite League" type="league">
                         <option>Premier League</option>
                         <option>Championship</option>
                         <option>League One</option>
@@ -71,4 +77,10 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+const mapStateToProps = (state) => {
+    return {
+        state: state
+    }
+};
+
+module.exports = connect(mapStateToProps)(SignupForm);

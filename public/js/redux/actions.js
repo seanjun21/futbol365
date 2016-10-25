@@ -1,8 +1,52 @@
 import fetch from 'isomorphic-fetch';
+const SERVER_URL = window.location.origin;
+
+/*----- Fetch Help Function -----*/
+
+function fetchHelp(url, init = {}) {
+    return fetch(url, init).then((res) => {
+        if (res.status < 200 || res.status >= 300) {
+            const error = new Error(res.statusText);
+            error.res = res;
+            throw error;
+        }
+        return res.json();
+    });
+}
 
 /*----- Add users into database -----*/
 
+function addUser(username) {
+    return (dispatch) => {
+        const init = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        };
 
+        const url = `${SERVER_URL}/users`;
+
+        console.log(url, '<---url');
+        const newFetch = fetchHelp(url, init);
+
+        console.log(newFetch, 'newFetch');
+
+        newFetch.then((username) => {
+            console.log(username, '<---username');
+            return dispatch({
+                type: 'ADD_USER_SUCCESS',
+                username: username
+            });
+        }).catch((error) => {
+            return dispatch({
+                type: 'ADD_USER_ERROR',
+                error: error
+            })
+        })
+    }
+}
 
 /*----- Fetch teams in a league -----*/
 
@@ -60,5 +104,6 @@ function fetchFixtures() {
     };
 }
 
+exports.addUser = addUser;
 exports.fetchTeams = fetchTeams;
 exports.fetchFixtures = fetchFixtures;
