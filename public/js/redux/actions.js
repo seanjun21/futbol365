@@ -3,6 +3,8 @@ const SERVER_URL = window.location.origin;
 
 /*----- Fetch Help Function -----*/
 
+// TODO: fix fetchHelp function
+
 function fetchHelp(url, init = {}) {
     return fetch(url, init).then((res) => {
         if (res.status < 200 || res.status >= 300) {
