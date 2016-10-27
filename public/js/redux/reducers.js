@@ -1,5 +1,3 @@
-import actions from './actions';
-
 function reducer(state = {}, action) {
     switch (action.type) {
         case 'FETCH_FIXTURES_SUCCESS': {

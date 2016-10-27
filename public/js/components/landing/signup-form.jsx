@@ -44,22 +44,25 @@ class SignupForm extends React.Component {
 
                 {/* Favorite League */}
                 <div className="form-group">
-                    <select className="selectpicker" ref="league" title="Choose Your Favorite League" type="league">
-                        <option>Premier League</option>
-                        <option>Championship</option>
-                        <option>League One</option>
-                        <option>1. Bundesliga</option>
-                        <option>2. Bundesliga</option>
-                        <option>DFB-Pokal</option>
-                        <option>Eredivisie</option>
-                        <option>Ligue 1</option>
-                        <option>Ligue 2</option>
-                        <option>Primera Division</option>
-                        <option>Liga Adelante</option>
-                        <option>Serie A</option>
-                        <option>Primeira Liga</option>
-                        <option>Champions League</option>
-                    </select>
+                    <label className="col-md-4 control-label">Favorite League</label>
+                    <div className="col-md-4">
+                        <select className="form-control" ref="league" type="league" defaultValue="None">
+                            <option>Premier League</option>
+                            <option>Championship</option>
+                            <option>League One</option>
+                            <option>1. Bundesliga</option>
+                            <option>2. Bundesliga</option>
+                            <option>DFB-Pokal</option>
+                            <option>Eredivisie</option>
+                            <option>Ligue 1</option>
+                            <option>Ligue 2</option>
+                            <option>Primera Division</option>
+                            <option>Liga Adelante</option>
+                            <option>Serie A</option>
+                            <option>Primeira Liga</option>
+                            <option>Champions League</option>
+                        </select>
+                    </div>
                 </div>
 
 
