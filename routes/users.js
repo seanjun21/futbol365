@@ -4,12 +4,12 @@ const User = require('../models/user-model');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    console.log(req, '<---request');
     User.create({
         username: req.body.username,
         password: req.body.password,
         league: req.body.league
     }, function(err, item) {
+        console.log(err);
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'

@@ -5,9 +5,8 @@ const config = require('./config');
 const users = require('./routes/users');
 
 const app = express();
-const jsonParser = bodyParser.json();
 
-app.use(jsonParser);
+app.use(bodyParser.json());
 app.use(express.static('./build'));
 app.use('/users', users);
 

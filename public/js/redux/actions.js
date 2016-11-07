@@ -28,13 +28,9 @@ function addUser(username) {
         };
 
         const url = `${SERVER_URL}/users`;
-
         const newFetch = fetchHelp(url, init);
 
-        console.log(newFetch, 'newFetch');
-
         newFetch.then((username) => {
-            console.log(username, '<---username');
             return dispatch({
                 type: 'ADD_USER_SUCCESS',
                 username: username
