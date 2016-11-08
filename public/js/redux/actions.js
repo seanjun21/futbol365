@@ -27,7 +27,7 @@ function addUser(username) {
             body: JSON.stringify(username)
         };
 
-        const url = `${SERVER_URL}/users`;
+        const url = `${SERVER_URL}/`;
         const newFetch = fetchHelp(url, init);
 
         newFetch.then((username) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import actions from '../../redux/actions';
+import {hashHistory} from 'react-router'
 
 class SignupForm extends React.Component {
     constructor() {
@@ -15,6 +16,12 @@ class SignupForm extends React.Component {
             password: this.refs.password.value,
             league: this.refs.league.value
         }));
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.username !== "") {
+            hashHistory.push(`/${nextProps.username}/fixtures`);
+        }
     }
 
 
@@ -82,7 +89,8 @@ class SignupForm extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        state: state
+        state: state,
+        username: state.username
     }
 };
 

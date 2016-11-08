@@ -1,12 +1,17 @@
 import React from 'react';
-import {Router, Route, hashHistory} from 'react-router';
-import LandingPage from './components/landing/landing-page';
-import FixturesPage from './components/fixtures/fixtures-page';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import AppContainer from './components/AppContainer';
+import LandingPage from './components/landing/LandingPage';
+import FixturesPage from './components/fixtures/FixturesPage';
 
 const routes = (
     <Router history={hashHistory}>
-        <Route path="/" component={LandingPage}/>
-        <Route path="/fixtures" component={FixturesPage}/>
+        <Route path="/" component={AppContainer}>
+            <IndexRoute component={LandingPage} />
+            <Route path="/:username/fixtures">
+                <IndexRoute component={FixturesPage} />
+            </Route>
+        </Route>
     </Router>
 );
 
