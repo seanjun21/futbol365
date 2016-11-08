@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(express.static('./build'));
-app.use('/', users);
+app.use('/users', users);
 
 function runServer(callback) {
     mongoose.connect(config.DATABASE_URL, (err) => {

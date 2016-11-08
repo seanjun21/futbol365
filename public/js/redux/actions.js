@@ -27,13 +27,13 @@ function addUser(username) {
             body: JSON.stringify(username)
         };
 
-        const url = `${SERVER_URL}/`;
+        const url = `${SERVER_URL}/users`;
         const newFetch = fetchHelp(url, init);
 
-        newFetch.then((username) => {
+        newFetch.then((user) => {
             return dispatch({
                 type: 'ADD_USER_SUCCESS',
-                username: username
+                user: user
             });
         }).catch((error) => {
             return dispatch({

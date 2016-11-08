@@ -9,7 +9,6 @@ router.post('/', (req, res) => {
         password: req.body.password,
         league: req.body.league
     }, function(err, item) {
-        console.log(err);
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'

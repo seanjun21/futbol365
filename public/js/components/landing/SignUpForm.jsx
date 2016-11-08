@@ -19,11 +19,11 @@ class SignupForm extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps, '<----nextProps');
         if (nextProps.username !== "") {
             hashHistory.push(`/${nextProps.username}/fixtures`);
         }
     }
-
 
     render() {
         return (
@@ -90,7 +90,8 @@ class SignupForm extends React.Component {
 const mapStateToProps = (state) => {
     return {
         state: state,
-        username: state.username
+        username: state.username,
+        league: state.league
     }
 };
 
