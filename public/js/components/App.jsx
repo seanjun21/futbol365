@@ -1,9 +1,9 @@
 import React from 'react';
 import NavBar from './landing/NavBar';
 
-function AppContainer(props) {
+function App(props) {
     return (
-        <div className='app-container'>
+        <div className='app'>
             <NavBar />
             <div>
                 {props.children}
@@ -12,4 +12,4 @@ function AppContainer(props) {
     )
 }
 
-export default AppContainer;
+export default App;

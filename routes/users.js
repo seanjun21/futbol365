@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
         username: req.body.username,
         password: req.body.password,
         league: req.body.league
-    }, function(err, item) {
+    }, (err, item) => {
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'
