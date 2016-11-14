@@ -18,6 +18,7 @@ function fetchHelp(url, init = {}) {
 
 function addUser(username) {
     return (dispatch) => {
+        const url = `${SERVER_URL}/users`;
         const init = {
             method: 'POST',
             headers: {
@@ -27,10 +28,7 @@ function addUser(username) {
             body: JSON.stringify(username)
         };
 
-        const url = `${SERVER_URL}/users`;
-        const newFetch = fetchHelp(url, init);
-
-        newFetch.then((user) => {
+        fetchHelp(url, init).then((user) => {
             return dispatch({
                 type: 'ADD_USER_SUCCESS',
                 user: user
@@ -49,16 +47,12 @@ function addUser(username) {
 function fetchTeams() {
     return (dispatch) => {
         const url = 'http://api.football-data.org/v1/competitions/426/leagueTable';
-        return fetch(url, {
+        const init = {
+            method: 'GET',
             headers: {'X-Auth-Token': 'e34ad8f9aebb436eb3437851ca9b581a'}
-        }).then((response) => {
-            if (response.status < 200 || response.status >= 300) {
-                const error = new Error(response.statusText);
-                error.response = response;
-                throw error;
-            }
-            return response.json();
-        }).then((teams) => {
+        };
+
+        fetchHelp(url, init).then((teams) => {
             return dispatch({
                 type: 'FETCH_TEAMS_SUCCESS',
                 teams: teams
@@ -77,16 +71,12 @@ function fetchTeams() {
 function fetchFixtures() {
     return (dispatch) => {
         const url = 'http://api.football-data.org/v1/competitions/426/fixtures';
-        return fetch(url, {
+        const init = {
+            method: 'GET',
             headers: {'X-Auth-Token': 'e34ad8f9aebb436eb3437851ca9b581a'}
-        }).then((response) => {
-            if (response.status < 200 || response.status >= 300) {
-                const error = new Error(response.statusText);
-                error.response = response;
-                throw error;
-            }
-            return response.json();
-        }).then((fixtures) => {
+        };
+
+        fetchHelp(url, init).then((fixtures) => {
             return dispatch({
                 type: 'FETCH_FIXTURES_SUCCESS',
                 fixtures: fixtures
